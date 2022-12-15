@@ -1,0 +1,197 @@
+h1{
+    
+    font-size: 5rem;
+    line-height: 1.5;
+    text-shadow: 5px 4px 11px rgba(0, 0, 0, 0.26);
+    letter-spacing: 1px;
+    color: #07502a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+    
+      
+}
+/* .welcome{
+    
+}
+.title1{
+    
+} */
+h2{
+    font-size: 3rem;
+    line-height: 1.5;
+    text-shadow: 5px 4px 11px rgba(0, 0, 0, 0.26);
+    letter-spacing: 0.5px;
+    color: #0f0c3b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+    
+}
+body{
+    
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+/*Home*/
+.largeMenuButton {
+    height:300px;
+    width:300px;
+    cursor:pointer;
+    margin: 20px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 250px;
+    border: 5px outset black;
+}
+
+
+.largeMenuButton:hover {
+    background-color: lightblue;
+    color:black;
+}
+
+.returnCardButton{
+    border: 5px outset red;
+    cursor:pointer;
+    float: right;
+    font-size: 32px;
+    margin:30px;
+}
+.returnCardButton:hover{
+    background-color: black;
+    color:white;
+}
+
+/*Select Account*/
+.accountButton {
+    border: 5px outset black;
+    width:700px;
+    color: #dddddd;
+    cursor:pointer;
+    margin: 20px;
+    font-size: 40px;
+}
+
+.accountButton:hover {
+    background-color: lightblue;
+    color:black;
+}
+
+.nextButton{
+     border: 5px  gray;
+     background-color: lightgray;
+     width:200px;
+     cursor:pointer;
+     margin: 20px;
+     font-size: 32px;
+     color: gray;
+ }
+
+.page{
+    border: 5px  gray;
+    background-color: white;
+    width:200px;
+    margin: 20px;
+    font-size: 32px;
+    color: gray;
+}
+
+/*Account page*/
+.accountDisplay {
+    border: 5px outset black;
+    /*background-color: white;*/
+    width:530px;
+    cursor:pointer;
+    margin: 10px;
+    font-size: 30px;
+    color: #dddddd;
+}
+
+.accountDisplay:hover {
+    background-color: lightblue;
+    color:black;
+}
+
+.optionButton{
+    border: 5px outset black;
+    background-color: white;
+    height:150px;
+    width:600px;
+    cursor:pointer;
+    margin: 5px;
+    font-size: 40px;
+    color: black;
+}
+.optionButton:hover {
+    background-color: lightblue;
+    color:black;
+}
+
+
+
+/* Info*/
+
+.infoText {
+    font-size: 50px;
+
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#p1{
+ text-align: center;
+}
+
+/**Withdrawal**/
+
+
+.withdraw {
+    border: 5px outset black;
+    height: 100px;
+    width: 150px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 40px;
+}
+
+.backButton{
+    height:80px;
+    width:150px;
+    border: 5px outset red;
+    cursor:pointer;
+    font-size: 32px;
+    margin:10px;
+}
+.backButton:hover{
+    background-color: #4a0000;
+    color:white;
+}
+
+.enterButton{
+    height:80px;
+    width:150px;
+    border: 5px outset green;
+    cursor:pointer;
+    float: right;
+    font-size: 32px;
+    margin:10px;
+}
+.enterButton:hover{
+    background-color: green;
+    color:white;
+}
