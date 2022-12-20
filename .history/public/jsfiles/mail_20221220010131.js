@@ -1,2 +1,0 @@
-onwind
-alert('hello');

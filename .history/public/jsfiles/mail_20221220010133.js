@@ -1,2 +1,0 @@
-onwi
-alert('hello');

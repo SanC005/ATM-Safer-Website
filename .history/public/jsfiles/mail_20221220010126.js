@@ -1,2 +1,0 @@
-on
-alert('hello');
