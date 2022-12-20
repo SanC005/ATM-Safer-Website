@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://use.fontawesome.com/70aff799b3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/jsfiles/updateBalance.js"></script>
+</head>
+
+<style>
+    .accountDisplay {
+        text-align: center;
+                border: 5px;
+
+        position: absolute;
+        left: 34%;
+        height:80px;
+        width:400px;
+        margin: 10px;
+        font-size: 30px;
+        color:black;
+    }
+
+    .quickLinkLabel{
+        font-size: 30px;
+        position: absolute;
+        top: 5%;
+    }
+
+
+
+    .quickBtn{
+        position: absolute;
+        border: 5px outset black;
+        height:100px;
+        width:150px;
+        cursor:pointer;
+        margin: 10px;
+        font-size: 40px;
+        color:#fff;
+    }
+    .quickBtn:hover{
+        background-color: lightgrey;
+        color:black;
+    }
+    
+
+    .backButton{
+        position: absolute;
+        right: 0;
+        top: 70%;
+        height:100px;
+        width:150px;
+        border: 5px outset red;
+        cursor:pointer;
+        float: right;
+        font-size: 32px;
+        margin:10px;
+    }
+    .backButton:hover{
+        background-color: #4a0000;
+        color:white;
+    }
+
+    .enterButton{
+        position: absolute;
+        right: 28%;
+        top: 41%;
+        height:80px;
+        width:150px;
+        border: 5px outset green;
+        cursor:pointer;
+        float: right;
+        font-size: 32px;
+        margin:10px;
+    }
+    .enterButton:hover{
+        background-color: green;
+        color:white;
+    }
+
+
+    .arrow{
+        position: absolute;
+        height:150px;
+        width: 150px;
+        left:45%;
+    }
+
+    
+
+    #numba{
+        position: absolute;
+        top:44%;
+        left: 43.5%;
+        font-size:40px;
+        width: 180px;
+        text-align: center;
+    }
+    
+    body {
+
+        text-align:center;                                       /* ALIGN TEXT IN CENTER OF BODY */
+    
+        background-color:#FFFFFF;                                /* BACKGROUND COLOR */
+    
+        font-family:Verdana, Arial, Helvetica, sans-serif;       /* FRIENDLY FONTS */
+    
+    }
+    #keypad {margin:auto; margin-top:20px;}  
+    .display {
+
+        width:300px;
+    
+        margin:10px auto auto auto;
+    
+        background-color:#FFF;
+    
+        color:#000000;
+    
+        border:1px solid #999999;
+    
+        font-size:40px;
+    
+        text-align: center;
+    
+    }
+    
+    .calcBtn {
+    
+        font-size: 30px;
+    
+        width: 70px;
+    
+        height: 70px;
+    
+        margin: 10px;
+    
+    
+    
+    }
+    
+    .calcBtn#btnEnt {
+    
+        width: 260px;
+    
+        ext-align: center;
+    
+    }
+    
+    /* KEYPAD */
+    
+    #keypad tr td {
+    
+        vertical-align:middle;
+    
+        margin: 10px;
+    
+        text-align:center;
+    
+        border:1px solid #000000;
+    
+        font-size:18px;
+    
+        font-weight:bold;
+    
+        width:40px;
+    
+        height:40px;
+    
+        cursor:pointer;
+    
+        background-color:#666666;
+    
+        color:#CCCCCC;}
+    
+    #keypad tr td:hover {background-color:#999999; color:#FFFF00;}
+    
+    
+    
+    /* PLACEHOLDER CENTERING */
+    
+    ::-webkit-input-placeholder { text-align: center; }
+    
+    :-moz-placeholder { text-align: center; }
+    
+    ::-moz-placeholder { text-align: center;}
+    
+    :-ms-input-placeholder { text-align: center; }
+    
+    
+    
+    /* RETURN CARD BUTTON STYLING NEEDED */
+    
+    
+    
+    .aligning{
+    
+        position: absolute;
+    
+        right:20%;
+    
+        top: 80%;
+    
+    }
+    
+    </style>
+
+
+<body style="height: 100vh">
+<div class="container">
+
+    <!-- <p class="quickLinkLabel" id="leftLabel">Quick Links</p>
+
+    <p class="quickLinkLabel" id="rightLabel">Quick Links</p> -->
+<div class="container" >
+<div class="row" id="title">
+    
+</div>
+
+
+
+
+
+<input class="backButton btn btn-danger btn-lg " type="button" value="Back" onclick="goBack()"/>
+
+<form action="/withdraw" method="post">
+
+    <input id="wdAmount" type="text" name="wdAmount" value="" maxlength="7" class="display" placeholder="$0000.00" readonly="readonly" />
+    
+    
+    
+        <div id="keypad" align="center">
+    
+            <input class="calcBtn" id="btn1" type="button" onclick="addCode('1');" value="1" />
+    
+            <input class="calcBtn" id="btn2" type="button" onclick="addCode('2');" value="2" />
+    
+            <input class="calcBtn" id="btn3" type="button" onclick="addCode('3');"
+    
+                   value="3"/>
+    
+            <br />
+    
+            <input class="calcBtn" id="btn4" type="button" onclick="addCode('4');"
+    
+                   value="4"/>
+    
+            <input class="calcBtn" id="btn5" type="button" onclick="addCode('5');"
+    
+                   value="5"/>
+    
+            <input class="calcBtn" id="btn6" type="button" onclick="addCode('6');"
+    
+                   value="6"/>
+    
+            <br />
+    
+            <input class="calcBtn" id="btn7" type="button" onclick="addCode('7');"
+    
+                   value="7"/>
+    
+            <input class="calcBtn" id="btn8" type="button" onclick="addCode('8');"
+    
+                   value="8"/>
+    
+            <input class="calcBtn" id="btn9" type="button" onclick="addCode('9');"
+    
+                   value="9"/>
+    
+            <br />
+    
+            <input class="calcBtn" id="btn0" type="button" onclick="addCode('0');"
+    
+                   value="0"/>
+    
+            <input class="calcBtn" id="btnd" type="button" onclick="addCode('.');"
+    
+                   value="."/>
+    
+            <input class="calcBtn" id="btnDel" type="button" style="color:red" value="Del" onclick="backspace();" />
+    
+            <br />
+    
+            <input class="calcBtn" id="btnEnt" type="button" onclick="submitForm(wdAmount.value) " style="color:green"
+    
+                   value="Enter"/>
+    
+        </div>
+    
+    
+    
+    </form>
+<!-- <FORM METHOD="LINK" ACTION="confirmWithdrawal.html">
+    <input type="text" name="val" id="numba" value="0" readonly placeholder="$000">
+    <INPUT class="enterButton btn btn-success btn-lg" onclick="submitForm(numba.value)" VALUE="Enter">
+</FORM> -->
+</div>
+    </div>
+
+<script>
+    var inputLength = 0;
+
+	var decimalPressed = false;
+
+function addCode(key) {
+
+	var input = document.forms[0].wdAmount;
+
+
+
+	if (key == "." && inputLength <= 5 && decimalPressed == false) {
+
+		document.getElementById('numba').disabled = true;
+
+		document.getElementById('numba').style.backgroundColor = "grey";
+
+		decimalPressed = true;
+
+		inputLength = 5;
+
+		input.value = input.value + key;
+
+	} else if (inputLength < 7) {
+
+		inputLength += 1;
+
+		input.value = input.value + key;
+
+	}
+
+	console.log("key press - inputLength = " + inputLength);
+
+	console.log("decimalPressed = " + decimalPressed);
+
+}
+
+	function backspace() {
+
+		var input = document.forms[0].wdAmount;
+
+		var lastChar = input.value[input.value.length-1];
+
+		console.log(lastChar);
+
+		if (lastChar == '.') {
+
+			console.log("last char is .");
+
+			input.value = input.value.substr(0, input.value.length - 1);
+
+			document.getElementById('btnd').disabled = false;
+
+			document.getElementById('btnd').style.backgroundColor = "";
+
+			decimalPressed = false;
+
+			inputLength = input.value.length;
+
+		} else {
+
+			input.value = input.value.substr(0, input.value.length - 1);
+
+			inputLength = input.value.length;
+
+		}
+
+		console.log("backspace - inputLength = " + inputLength);
+
+		console.log("decimalPressed = " + decimalPressed);
+
+	}
+
+
+
+
+
+function emptyCode()  { document.forms[0].wdAmount.value = ""; }
+    function input(e) {
+        var val=parseInt(document.getElementById("numba").value);
+       
+        var result=val+e.value;
+        if (result>300){
+                alert("$300 is the limit to withdraw from the ATM");
+        }
+        
+        document.getElementById("numba").value=result;
+        
+        
+    }
+    
+    function del() {
+        var tbInput = document.getElementById("tbInput");
+        tbInput.value = tbInput.value.substr(0, tbInput.value.length-1);
+    }
+    
+    function ent() {
+        var PIN="1234567887654321";
+        var str1=document.getElementById("tbInput").value;
+        if (str1==PIN) {
+            window.location="PINInput.html";
+         } else {
+             alert("That account number does not exist!");
+             document.getElementById("tbInput").value ="";
+         }
+    }
+    
+        
+
+    function add20(e){
+        var val=parseInt(document.getElementById("numba").value);
+        var btnVal = parseInt(document.getElementById("up20").value);
+        var result=val+btnVal;
+        if (result>300){
+                alert("$300 is the limit to withdraw from the ATM");
+            }
+        if (result>=0&&result<=300){
+
+            document.getElementById("numba").value=result;
+        }
+    }
+
+    function sub20(e){
+        var val=parseInt(document.getElementById("numba").value);
+        var btnVal = parseInt(document.getElementById("down20").value);
+        var result=val-btnVal;
+        if (result>=0){
+            document.getElementById("numba").value=result;
+        }
+    }
+
+    function sub100(e){
+        var val=parseInt(document.getElementById("numba").value);
+        var btnVal = parseInt(document.getElementById("down100").value);
+        var result=val-btnVal;
+        if (result>=0){
+            document.getElementById("numba").value=result;
+        }
+    }
+
+    // LEAVE DOWN HERE
+    function getQueryStrings() {
+        var assoc  = {};
+        var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+        var queryString = location.search.substring(1);
+        var keyValues = queryString.split('&');
+
+        for(var i in keyValues) {
+            var key = keyValues[i].split('=');
+            if (key.length > 1) {
+                assoc[decode(key[0])] = decode(key[1]);
+            }
+        }
+        return assoc;
+    }
+    var qs = getQueryStrings();
+    var myParam = qs["account"];
+    //$("#title").append('<h3 style="text-align: center"> Enter the amount to withdraw from ' + myParam + " 1234567887654321:" + '</h3>');
+    $("#title").append('<h3 style="text-align: center"> Enter the amount to withdraw" + '</h3>');
+
+    function submitForm(value) {
+        console.log(myParam)
+        location.href = 'confirmWithdrawal.html?account='+ myParam +'&val=' + value ;
+    }
+
+    function goBack() {
+        location.href = 'acct.html?account='+ myParam ;
+    }
+
+</script>
+</body>
+
+</html>
